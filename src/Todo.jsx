@@ -1,12 +1,19 @@
 import React, { useState } from 'react';
+
 function Todo({ addTodos, index, removeElements, markTodo }) {
   return (
     <div>
-      <span style={{ textDecoration: addTodos.isDone ? 'line-through' : '' }}>
+      <span
+        style={{
+          textDecoration: addTodos.isDone ? 'line-through red' : '',
+        }}
+      >
         {addTodos.text}
       </span>
-      <button onClick={() => removeElements(index)}> ok</button>
-      <button onClick={() => markTodo(index)}> {index}</button>
+      <div>
+        <button onClick={() => removeElements(index)}> remove</button>
+        <button onClick={() => markTodo(index)}> completed</button>
+      </div>
     </div>
   );
 }
